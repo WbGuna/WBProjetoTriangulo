@@ -34,7 +34,29 @@ public class WBProjetoTriangulo extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		int var1, var2, var3;
+		var1 = Integer.parseInt(request.getParameter("val1"));		
+		var2 = Integer.parseInt(request.getParameter("val2"));
+		var3 = Integer.parseInt(request.getParameter("val3"));
+		
+			
+			if (var1 <= 0 && var2 <= 0 && var3 <= 0) {
+				response.getWriter().println("Por favor Inserir valores validos.");
+				
+			} else if(var1 > 0 && var2 == 0 && var3 == 0 || var2 > 0 && var1 == 0 && var3 == 0 || var3 > 0 && var1 == 0 && var2 == 0 ) {
+				response.getWriter().println("Isso � uma Reta.");
+				
+			}
+			
+			else if (var1 == 0 && var2 > 0 && var3 > 0 || var2 == 0 && var1 > 0 && var3 > 0 || var3 == 0 && var1 > 0 && var2 > 0 ) {
+				if(var2 == var3 || var1 == var3 || var1 == var2) {
+					response.getWriter().println("Isso � um quadrado");
+					
+				}else {
+					response.getWriter().println("Isso � um retangulo.");
+				}
+				
+			}
 	}
 
 
