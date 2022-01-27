@@ -56,7 +56,20 @@ public class WBProjetoTriangulo extends HttpServlet {
 					response.getWriter().println("Isso � um retangulo.");
 				}
 				
+			}else if (var1 == var2 && var2 == var3) {
+				response.getWriter().println("Este � um Triangulo Equilatero");
+				
+			} else if (var1 == var2 || var1 == var3 || var2 == var3) {
+				response.getWriter().println("Este � um Triangulo Isoscele");
+				
+			} else if (var1 != var2 && var1 != var3 && var2 != var3) {
+				response.getWriter().println("Este � um Triangulo Escaleno");
+							
+			} else {
+				response.getWriter().println("O Rafa � o melhor estrutor do mundo!!!!");
 			}
+		}	
 	}
+	
 
 
